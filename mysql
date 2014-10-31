@@ -457,7 +457,7 @@ sub update_slave {
     $data->{slave_running} = ($data->{slave_sql_running} eq 'Yes')
             ? $data->{seconds_behind_master} : 0;
     $data->{slave_stopped} = ($data->{slave_sql_running} eq 'Yes')
-            ? 0 : $data->{seconds_behind_master};
+            ? 0 : 1;
 }
 
 # Overwrites seconds_behind_master collected from SHOW SLAVE STATUS
